@@ -1,0 +1,33 @@
+.booking-form {
+  margin: 20px 15px;
+  width: 100%;
+  text-align: center;
+  position: relative;
+  .input-wrapper {
+  	display: inline-block;
+  	padding: 0px 20px;
+  	input {
+  		min-width: 200px;
+  		outline: none;
+  		padding: 8px 12px;
+  		font-size: 16px;
+  	}
+  }
+  .submit-wrapper {
+  	display: inline-block;
+  	padding: 0px 20px;
+  	button {
+  		border: none;
+  		outline: none;
+  		background: #000;
+  		color: #fff;
+  		padding: 10px 30px;
+  		margin: 15px auto;
+  		box-shadow: none;
+  		cursor: pointer;
+  		&:hover {
+	  		background: #4c4c4c;
+	  	}
+  	}
+  }
+}

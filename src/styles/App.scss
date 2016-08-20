@@ -1,25 +1,23 @@
-/* Base Application Styles */
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,400,300,600,700);
+
+html, body {
+  height: 100%; 
+  -webkit-font-smoothing: antialiased;
+}
 body {
-  color: #fff;
-  background: #222;
+  color: #111;
+  background: #fff;
+  font-size: 14px;
+  font-family: "Open Sans", arial, sans-serif;
+  line-height: 1.6;
+  position: relative;
 }
-
-.index {
-  img {
-    margin: 40px auto;
-    border-radius: 4px;
-    background: #fff;
-    display: block;
-  }
-}
-
-.index {
-  .notice {
-    margin: 20px auto;
-    padding: 15px 0;
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  .title {
+    margin-top: 20px;
+    font-size: 24px;
     text-align: center;
-    border: 1px solid #000;
-    border-width: 1px 0;
-    background: #666;
   }
 }
