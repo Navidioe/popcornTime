@@ -23,3 +23,6 @@ npm run clean
 # Just copy the static assets
 npm run copy
 ```
+
+## License
+[MIT license](http://opensource.org/licenses/mit-license.php)
