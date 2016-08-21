@@ -4,34 +4,52 @@ require('styles/App.scss');
 
 import React from 'react';
 import BookingFormComponent from './BookingFormComponent';
+import TheaterComponent from './TheaterComponent';
 
 class AppComponent extends React.Component {
 	
 	constructor(props) {
     super(props);
 		this.state = {
-			theaterData: {
-				bookingForm: {},
-				rows: 10,
-				columns: 12,
-				reserved: [],
-				selected: []
-			}
+			bookingForm: {},
+			enableTheater: false,
+			rows: 10,
+			columns: 12,
+			reserved: [],
+			reservations: []
 		}
 		this.handleBookingForm = this.handleBookingForm.bind(this);
+		this.handleBookingConfirmation = this.handleBookingConfirmation.bind(this);
   }
 
   handleBookingForm(name, seats){
   	this.setState({
-  		theaterData: { bookingForm: { name: name, seats: seats }}
-  	})
+			bookingForm: { name: name, seats: seats },
+			enableTheater: true
+  	});
+  	this.refs.theaterComponent.handleResetSelected();
+  }
+
+  handleBookingConfirmation(selectedSeats){
+  	this.setState({
+			bookingForm: {},
+			enableTheater: false,
+			reserved: this.state.reserved.push(selectedSeats),
+			reservations: this.state.reservations.push({
+				name: this.state.bookingForm.name,
+				seats: selectedSeats
+			})
+  	});
+  	this.refs.bookingFormComponent.handleResetSubmitForm();
+  	this.refs.theaterComponent.handleResetSelected();
   }
 
   render() {
     return (
       <div className="container">
         <div className="title">Popcorn Time</div>
-        <BookingFormComponent handleBookingForm={this.handleBookingForm}/>
+        <BookingFormComponent ref="bookingFormComponent" handleBookingForm={this.handleBookingForm}/>
+        <TheaterComponent ref="theaterComponent" handleBookingConfirmation={this.handleBookingConfirmation} seatLimit={this.state.bookingForm.seats} enableTheater={this.state.enableTheater} reserved={this.state.reserved} rows={this.state.rows} columns={this.state.columns}/>
       </div>
     );
   }

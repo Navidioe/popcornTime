@@ -13,6 +13,7 @@ class BookingFormComponent extends React.Component {
 		this.handleNameChange = this.handleNameChange.bind(this);
 		this.handleSeatsChange = this.handleSeatsChange.bind(this);
 		this.handleSubmitForm = this.handleSubmitForm.bind(this);
+		this.handleResetSubmitForm = this.handleResetSubmitForm.bind(this);
   }
 
 	handleNameChange(event) {
@@ -27,6 +28,10 @@ class BookingFormComponent extends React.Component {
 		event.preventDefault();
 		this.props.handleBookingForm(this.state.name, this.state.seats);
 	}
+
+	handleResetSubmitForm() {
+  	this.setState({ name: '', seats: '' });
+  }
 
   render() {
     return (
