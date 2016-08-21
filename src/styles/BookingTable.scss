@@ -1,0 +1,13 @@
+.bookingtable {
+  margin: 30px auto;
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+  td, th {
+  	border: 1px solid #111;
+    padding: 6px 20px;
+  }
+}
+.bookingtable-hide {
+  display: none; 
+}

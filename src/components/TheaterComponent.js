@@ -77,7 +77,7 @@ class TheaterComponent extends React.Component {
 	}
 
   render() {
-  	var alphabet = 'abcdefghijklmnopqrstuvwxyz'.split('');
+  	var alphabet = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split('');
   	var overlayClass = classNames({
       'overlay': true,
       'overlay-hide': this.props.enableTheater
