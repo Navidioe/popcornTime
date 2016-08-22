@@ -2,6 +2,14 @@
 	text-align: center;
 	margin: 40px auto;
   position: relative;
+  .screen {
+    height: 40px;
+    margin: 20px auto;
+    color: #fff;
+    line-height: 40px;
+    max-width: 600px;
+    background: #2196F3;
+  }
   .overlay {
     position: absolute;
     height: 100%;

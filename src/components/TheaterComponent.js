@@ -85,6 +85,7 @@ class TheaterComponent extends React.Component {
     return (
       <div className="theater">
       	<span className={overlayClass}></span>
+        <div className="screen">Screen</div>
       	<div><span className="rowTitleWrapper"></span> {this.renderHeadCols()}</div>
       	{[...Array(this.props.rows)].map((x, i) =>
 			    <div key={i}><span className="rowTitleWrapper">{alphabet[i]}</span> {this.renderSeats(i+1)}</div>
